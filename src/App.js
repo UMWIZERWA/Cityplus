@@ -7,6 +7,10 @@ import About from './components/About';
 import Footer from './components/Footer.js';
 import Signin from './components/Signin.js';
 import Welcome from './components/users/Welcome';
+// import Signup from './components/Registration.js';
+import Datatable from './components/Datatable';
+import Account from './components/users/Account';
+
 
 import './css/tailwindcss.css';
 import {
@@ -15,27 +19,33 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Signup from './components/Registration.js';
-import Datatable from './components/Datatable';
-// import signin from './components/signin';
+
 
 function App() {
   return (
+
+    <div className="">
+
+
   <Router>
     <Switch>
-          <Route exact path="/">
+          {/* <Route exact path="/">
 
             <Body/>
 
          
-          </Route>
+          </Route> */}
           <Route path="/About-us">
           <About/>
           </Route>
 
         
-            <Route path="/user-signup">
+            {/* <Route exact path="/user-signup">
               <Signup/>
+          </Route> */}
+
+          <Route exact path="/user-signup">
+              <Account/>
           </Route>
        
           <Route path="/data-table">
@@ -53,31 +63,9 @@ function App() {
           
           </Switch>
           </Router>
+          </div>
+          
     );
-    
-    {/* // <div className="App">
-    //   <Navbar/>
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-
-    //     <p>
-    //       Hello <code>World</code> and Agathe UMWIZERWA Web Master.
-    //     </p>
-    //     <a */}
-    {/* //       className="My-color"
-    //       href="#"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Welcome to City plus App
-    //     </a>
-    //   </header> */}
-
-      
-    {/* //   <Body/>
-    //   <Footer/>
-    // </div> */}
-
 }
-
 export default App;
+        

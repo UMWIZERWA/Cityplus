@@ -1,12 +1,11 @@
 import React,{useState,useEffect} from 'react';
-import '../css/tailwindcss.css';
-// import Navbar from './Navbar';
+import '../../css/tailwindcss.css';
 import axios from 'axios';
-import undraw from '../img/undraw.png'
+import undraw from '../../img/undraw.png'
 
-function Signup(){
+function Account(){
     const[choosecategory,setChoosecategory]=useState("");
-    const[schoolname,setSchoolname]=useState("");
+    const[religionname,setReligionname]=useState("");
     const[email,setEmail]=useState("");
     const[password,setPassword]=useState("");
     const[confirmpassword,setConfirmPassword]=useState("");
@@ -21,7 +20,7 @@ function Signup(){
         e.preventDefault();
         const data={
             "choosecategory":choosecategory,
-            "schoolname":schoolname,
+            "religionname":religionname,
             "email":email,
             "password":password,
             "confirmpassword":confirmpassword,
@@ -41,11 +40,11 @@ function Signup(){
     }
     return(
         <>
-        {/* <Navbar/> */}
+        
 
         <div className=" flex flex-wrap bg-gray-200">
         <div  className="w-full md:w-1/6 "></div>
-            <div className="w-full md:w-2/6 App-signup ">
+            <div className="w-full md:w-2/6 App-Account ">
            
                 <p className="mt-12 text-center text-3xl font-bold text-gray-700"><u>Welcome To Create Account</u></p>
                 <div className="p-12  flex justify-center items-center">
@@ -64,7 +63,13 @@ function Signup(){
 
                 <form onSubmit={handleForm} className="p-12 w-full md:w-5/6">
                 
-                <div class="w-full mb-0 md:mb-0">
+               
+                   
+                    <label>Religion Name</label>
+                    <input type="text"name="religionname"value={religionname} onChange={event=>setReligionname(event.target.value)} placeholder="Religion name" className="w-full rounded-lg border py-2 px-3"/>
+                    <label>Email</label>
+                    <input type="text"name="email"value={email} onChange={event=>setEmail(event.target.value)} placeholder="Enter your Email" className="w-full rounded-lg border py-2 px-3"/>
+                    <div class="w-full mb-0 md:mb-0">
       <label class="block Lowercase tracking-wide text-gray-900 text-xm mb-0" for="grid-state">
         Choose Category
       </label>
@@ -80,11 +85,6 @@ function Signup(){
         </div>
       </div>
     </div>
-                   
-                    <label>School Name</label>
-                    <input type="text"name="schoolname"value={schoolname} onChange={event=>setSchoolname(event.target.value)} placeholder="Enter your School name" className="w-full rounded-lg border py-2 px-3 "/>
-                    <label>Email</label>
-                    <input type="text"name="email"value={email} onChange={event=>setEmail(event.target.value)} placeholder="Enter your Email" className="w-full rounded-lg border py-2 px-3"/>
                     <label>Password</label>
                     <input type="password"name="password"value={password} onChange={event=>setPassword(event.target.value)} placeholder="Enter your Password" className="w-full rounded-lg border py-2 px-3"/>
                     <label>Confirm Password</label>
@@ -110,4 +110,4 @@ function Signup(){
         </>
     )
 }
-export default Signup;
+export default Account;
